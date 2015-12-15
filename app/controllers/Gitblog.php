@@ -206,8 +206,9 @@ class Gitblog extends CI_Controller {
 		//加载模板引擎
 		$this->load->library('Twig', array("theme" => $this->confObj['theme']));
 		
-		//初始化博客信息
-		$this->markdown->initAllBlogData($blogPath, $this->confObj['enableCache']);
+        //初始化博客信息
+        $excludeDraft = !preg_match('#^/blog/(.+).html#',$_SERVER['REQUEST_URI']);
+		$this->markdown->initAllBlogData($blogPath, $this->confObj['enableCache'],$excludeDraft);
 		
 		//所有博客
 		$allBlogsList = null;

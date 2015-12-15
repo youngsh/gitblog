@@ -306,7 +306,7 @@ class Markdown {
 	}
 	
 	//加载所有的博客
-	public function initAllBlogData($postPath, $enableCache=false) {
+	public function initAllBlogData($postPath, $enableCache=false, $excludeDraft=true) {
 		$this->blogs = array();
 		$this->tags = array();
 		$this->categorys = array();
@@ -321,6 +321,13 @@ class Markdown {
 			
 			$this->readAllPostInfo($mdfiles, $postPath);
 		}
+        if($excludeDraft){
+            foreach($this->blogs as $k=>$v){
+                if($v['status']=='draft'){
+                    unset($this->blogs[$k]);
+                }
+            }
+        }
 	}
 	
 	//读取博客的基本信息
@@ -512,7 +519,7 @@ class Markdown {
 			if (empty($blogProp['title'])) continue;
 			
 			//草稿状态的不处理
-			if ($blogProp['status'] == "draft") continue;
+			//if ($blogProp['status'] == "draft") continue;
 			
 			$btime = strtotime($ctime);
 			if (empty($blogProp['date'])) {
