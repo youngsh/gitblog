@@ -186,7 +186,7 @@ class Gitblog extends CI_Controller {
 		$this->page(1);
 	}
 	
-	private function init() {
+	protected function init() {
 		//加载必要的类库
 		$this->load->library('Yaml');
 		$this->load->library('Markdown');
@@ -464,12 +464,12 @@ class Gitblog extends CI_Controller {
 	}
 	
 	//设置渲染数据
-	private function setData($key, $dataObj) {
+	protected function setData($key, $dataObj) {
 		$this->data[$key] = $dataObj;
 	}
 	
 	//渲染页面
-	private function render($tpl) {
+	protected function render($tpl) {
 		$htmlPage = $this->twig->render($tpl, $this->data, TRUE);
 		
 		if (!$this->export) {

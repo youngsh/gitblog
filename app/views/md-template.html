@@ -1,0 +1,9 @@
+<!--
+title: {{ data.title }}
+tags: {{ data.tags }}
+status: {% if data.category=='draft' %}draft{% else %}publish{% endif %} 
+date: {{ ""|date('Y-m-d') }}
+category: {{ data.category }} 
+-->
+
+{{ data.content|raw }}

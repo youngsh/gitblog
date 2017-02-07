@@ -2,7 +2,7 @@
 ---
 url: /
 title: Young`s-Blog
-subtitle: Good Good Study, Day Day Up
+subtitle: sogou内部学习文档
 theme: quest 
     #beach cube default line quest simple
 enableCache: true
@@ -16,7 +16,7 @@ description: >
 version: 1.0
 author:
     name: young
-    email: yangshaoh1111@gmail.com
+    email: yangshaohuasi1781@sogou-inc.com
     github: your-github
     weibo: your-weibo
     avatar:

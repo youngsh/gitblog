@@ -305,7 +305,7 @@ class Parsedown
                     'name' => 'pre',
                     'handler' => 'element',
                     'text' => array(
-                        'name' => 'code',
+                        'name' => 'span',
                         'text' => $text,
                     ),
                 ),
